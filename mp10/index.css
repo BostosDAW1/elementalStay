@@ -317,4 +317,22 @@ button:hover {
     }
 }
 
+.cajaTituloPromociones{
+    height: 100px;
+    width: 500px;
+    margin: auto;
+}
+
+.tituloPromociones{
+    text-align: center;
+    font-size: 50px;
+}
+
+.carrusel{
+    height: 500px;
+    width: 1200px;
+    margin: auto;
+    border: 1px solid black;
+}
+
 

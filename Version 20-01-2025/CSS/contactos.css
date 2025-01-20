@@ -1,0 +1,120 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* -------------------------------------- CSS DEL MENU DE ENLACES -----------------------------*/
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 118px; /* Altura del nav para compensar su posición fija */
+}
+
+body::before {
+    content: ""; /* Elemento vacío para el fondo */
+    position: fixed; /* Cubre toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/hotelPrincipal.jpg'); /* Imagen de fondo */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2; /* Ajusta solo la opacidad de la imagen */
+    z-index: -1; /* Coloca detrás del contenido */
+}
+
+/* FORMULARIO DE CONTACTO */
+.contact-container {
+    max-width: 800px;
+    margin: 32px auto;
+    background: #f4f4f4;
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.contact-container h1 {
+    font-size: 40px;
+    color: #000000; /* Naranja */
+    margin-bottom: 16px;
+}
+
+.contact-container p {
+    font-size: 19.2px;
+    color: #000000;
+    margin-bottom: 32px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-group label {
+    font-size: 17.6px;
+    color: #f57c00; /* Naranja */
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #444444; /* Borde oscuro */
+    border-radius: 5px;
+    font-size: 16px;
+    color: #000000; /* Texto blanco */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #f57c00; /* Naranja */
+    background-color: #888888; /* Fondo más claro */
+    outline: none;
+    color: white;
+}
+
+.btn-submit {
+    padding: 12px 24px;
+    font-size: 17.6px;
+    font-weight: bold;
+    color: #121212; /* Texto oscuro */
+    background-color: #f57c00; /* Naranja */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: center;
+}
+
+.btn-submit:hover {
+    background-color: #ff9800; /* Naranja más claro */
+    transform: scale(1.05); /* Animación de aumento */
+}
+
+/* FORMULARIO RESPONSIVO */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 24px;
+    }
+
+    .contact-container h1 {
+        font-size: 32px;
+    }
+
+    .contact-container p {
+        font-size: 16px;
+    }
+}

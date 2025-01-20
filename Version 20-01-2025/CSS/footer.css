@@ -1,0 +1,81 @@
+footer {
+    background-color: #000000; /* Fondo negro */
+    color: #ffffff; /* Texto blanco */
+    padding: 40px 20px; /* Espaciado interno */
+    font-family: Arial, sans-serif; /* Fuente limpia */
+    margin-top: 40px; /* Margen superior para separar el footer del contenido anterior */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around; /* Distribuye uniformemente las secciones a lo largo del ancho */
+    flex-wrap: wrap; /* Permite que las secciones se ajusten en pantallas pequeñas */
+    max-width: 1200px;
+    margin: 0 auto; /* Centrar el contenido */
+    gap: 20px; /* Espaciado entre secciones */
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px; /* Ancho mínimo para asegurar que las secciones se mantengan legibles */
+    text-align: justify; /* Alineación justificada para que el texto cubra todo el espacio */
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #939292; /* Títulos destacados en amarillo */
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section a {
+    font-size: 14px;
+    line-height: 1.6; /* Mejora la legibilidad */
+    color: #ffffff; /* Color blanco para texto y enlaces */
+    margin: 0;
+}
+
+.footer-section ul {
+    list-style: none; /* Elimina los puntos de lista */
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px; /* Espaciado entre enlaces */
+}
+
+.footer-section ul li a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: #ffffff;
+    transition: color 0.3s ease; /* Suaviza la transición al pasar el cursor */
+}
+
+.footer-section ul li a:hover {
+    color: #f1c40f; /* Cambia a amarillo al pasar el cursor */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px; /* Espaciado entre iconos */
+}
+
+.social-icons a img {
+    width: 24px; /* Tamaño uniforme de iconos */
+    height: 24px;
+    transition: transform 0.3s ease; /* Animación al pasar el cursor */
+}
+
+.social-icons a img:hover {
+    transform: scale(1.2); /* Aumenta el tamaño al pasar el cursor */
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #333; /* Línea divisoria sutil */
+    padding-top: 20px; /* Espaciado superior */
+    font-size: 12px;
+    color: #999999; /* Texto más claro para esta sección */
+}

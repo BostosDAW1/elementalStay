@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,71 +9,62 @@
     <link rel="stylesheet" href="./CSS/header.css">
 </head>
 <body>
-    <!-- ------------------------ NAV PRINCIPAL + OPCIONES --------------------- -->
     <nav>
         <div class="logo">
             <img src="img/logo.png" alt="Logo">
             <h1 class="logo-title">ELEMENTAL STAY</h1>
         </div>
         <ul>
-            <li><a href="index.php" id="boton-superior"><b>INICIO</b></a></li>
+            <li><a href="index.html" id="boton-superior"><b>INICIO</b></a></li>
             <li><a href="hoteles/hoteles.html" id="boton-superior"><b>HOTELES</b></a></li>
             <li><a href="contactos/contactos.html" id="boton-superior"><b>CONTACTO</b></a></li>
 
-            <!-- Aquí verificamos si la sesión está activa -->
-                <!-- Mostrar 'PERFIL' si la sesión está activa -->
-                <li class="profile">
-                    <a href="javascript:void(0);" onclick="toggleProfileMenu(event)" id="profileButton"><b>PERFIL</b></a>
-                    <!-- Menú desplegable de opciones de perfil -->
-                    <div class="profile-menu" id="profileMenu">
-                        <a href="./perfil/perfil.php">Ver Perfil</a>
-                        <a href="./inicio_session/logout.php" class="logout">Cerrar Sesión</a>
-                    </div>
-                </li>
-                <!-- Si no hay sesión activa, mostrar el botón de "Iniciar sesión" -->
-                <li><a href="../mp10/inicio_session/inicio_session.php" id="boton-superior"><b>INICIAR SESIÓN</b></a></li>
+            <li class="profile" style="display: none;">
+                <a href="javascript:void(0);" onclick="toggleProfileMenu(event)" id="profileButton"><b>PERFIL</b></a>
+                <div class="profile-menu" id="profileMenu">
+                    <a href="./perfil/perfil.html">Ver Perfil</a>
+                    <a href="#" onclick="simularLogout()" class="logout">Cerrar Sesión</a>
+                </div>
+            </li>
+
+            <li id="login-btn"><a href="./inicio_session/inicio_session.html" id="boton-superior"><b>INICIAR SESIÓN</b></a></li>
         </ul>
     </nav>
 
     <script>
-        // Función para alternar la visibilidad del menú de perfil
+        // Función para el menú desplegable del perfil
         function toggleProfileMenu(event) {
-            event.stopPropagation();  // Evita que el clic se propague a otras partes de la página
+            event.stopPropagation();
             var menu = document.getElementById('profileMenu');
-            menu.classList.toggle('show');  // Alterna la clase 'show' para mostrar/ocultar el menú
+            menu.classList.toggle('show');
         }
 
-        // Cerrar el menú si se hace clic fuera de él
+        // Simulación de Logout
+        function simularLogout() {
+            alert("Has cerrado sesión correctamente.");
+            window.location.href = "index.html";
+        }
+
+        // Cerrar menú al hacer clic fuera
         window.onclick = function(event) {
-            // Verificamos si el clic NO fue sobre el enlace 'PERFIL' ni el menú desplegable
             if (!event.target.matches('#profileButton') && !event.target.matches('.profile-menu') && !event.target.closest('.profile')) {
                 var dropdowns = document.getElementsByClassName('profile-menu');
                 for (var i = 0; i < dropdowns.length; i++) {
                     var openDropdown = dropdowns[i];
                     if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');  // Oculta el menú
+                        openDropdown.classList.remove('show');
                     }
                 }
             }
         }
     </script>
 
-
-
-
-
-
-
-    
-    <!-- -------------------------------------- CONTENEDOR PRINCIPAL --------------------------- -->
     <section>
         <div class="container">
-            <!-- --------------- IMAGEN - SECCION CONTENEDOR PRINCIPAL ------------- -->
             <div class="text-section">
                 <img src="./img/hotelPrincipal2.jpg" alt="fotoprincipal">
             </div>
             
-            <!-- --------------------- FORMULARIO - SECCION CONTENEDOR PRINCIPAL ------------------- -->
             <div class="form-section">
                 <form action="./Reserva/reserva.html">
                     <div class="form-group">
@@ -83,7 +72,6 @@
                         <input type="text" name="destino" id="destino" required>
                     </div>
                 
-                    <!-- Campos de fecha debajo del destino -->
                     <div class="form-group">
                         <label for="entrada"><b>Fecha de entrada</b></label>
                         <input type="date" id="entrada" name="entrada" required>
@@ -94,7 +82,6 @@
                         <input type="date" id="salida" name="salida" required>
                     </div>
                 
-                    <!-- Sección de selección de personas y habitaciones -->
                     <div class="form-group">
                         <label><b>Adultos</b></label>
                         <input type="number" id="adultos" name="adultos" value="1" min="1">
@@ -110,7 +97,6 @@
                         <input type="number" id="habitaciones" name="habitaciones" value="1" min="1">
                     </div>
                 
-                    <!-- Interruptor para mascotas -->
                     <div class="form-group">
                         <label for="mascotas"><b>¿Viajas con mascotas?</b></label>
                         <input type="checkbox" id="mascotas" name="mascotas">
@@ -120,14 +106,11 @@
                 
                     <button type="submit">Confirmar</button>
                 </form>
-                
             </div>
         </div>
     </section>
 
-    <!------------------- Carrusel -------------------->
     <section>
-        <!------------------- Primer carrusel -------------------->
         <div class="chromatic-container">
             <h5 class="tituloPromociones">PROMOCIONES</h5>
         </div>
@@ -161,11 +144,8 @@
             <a class="next" onclick="plusSlides(1, 'carrusel1')">❯</a>
         </div>
 
-        <br>
-        <br>
-        <br>
+        <br><br><br>
     
-        <!------------------- Segundo carrusel -------------------->
         <div class="chromatic-container2">
             <h5 class="tituloPromociones">ACTIVIDADES</h5>
         </div>
@@ -200,12 +180,11 @@
         </div>
     </section>
 
-   <!------------------- APARTADO HTML - FOOTER ------------------>
-    <footer>
+   <footer>
         <div class="footer-container">
             <div class="footer-section">
                 <h4>Sobre Nosotros</h4>
-                <p>Elemental Stay es tu plataforma para encontrar los mejores alojamientos al mejor precio, con opciones personalizadas para cada tipo de viajero.</p>
+                <p>Elemental Stay es tu plataforma para encontrar los mejores alojamientos al mejor precio.</p>
             </div>
             <div class="footer-section">
                 <h4>Enlaces Útiles</h4>
@@ -232,8 +211,6 @@
     </footer>
 
     <script src="JS/Carrusel.js"></script>
-    <script src="JS/Header.js"></script>
-
     
-</body>
+    </body>
 </html>

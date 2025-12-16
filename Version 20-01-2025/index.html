@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -25,7 +23,6 @@ session_start();
             <li><a href="contactos/contactos.html" id="boton-superior"><b>CONTACTO</b></a></li>
 
             <!-- Aquí verificamos si la sesión está activa -->
-            <?php if (isset($_SESSION['usuario'])): ?>
                 <!-- Mostrar 'PERFIL' si la sesión está activa -->
                 <li class="profile">
                     <a href="javascript:void(0);" onclick="toggleProfileMenu(event)" id="profileButton"><b>PERFIL</b></a>
@@ -35,10 +32,8 @@ session_start();
                         <a href="./inicio_session/logout.php" class="logout">Cerrar Sesión</a>
                     </div>
                 </li>
-            <?php else: ?>
                 <!-- Si no hay sesión activa, mostrar el botón de "Iniciar sesión" -->
                 <li><a href="../mp10/inicio_session/inicio_session.php" id="boton-superior"><b>INICIAR SESIÓN</b></a></li>
-            <?php endif; ?>
         </ul>
     </nav>
 
